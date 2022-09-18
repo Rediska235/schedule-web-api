@@ -1,0 +1,72 @@
+Start of the session: 18.09.2022 16:17:48
+   Log 1
+       Time: 18.09.2022 16:17:48
+       Request: https://localhost:7174/DailyShedule/GetTodayShedule
+       StatusCode: 200
+
+   Log 2
+       Time: 18.09.2022 16:17:54
+       Request: https://localhost:7174/DailyShedule/Update
+       StatusCode: 400
+
+   Log 3
+       Time: 18.09.2022 16:18:02
+       Request: https://localhost:7174/DailyShedule/Delete?dayOfWeek=23?dayOfWeek=23
+       StatusCode: 400
+
+   Log 4
+       Time: 18.09.2022 16:18:04
+       Request: https://localhost:7174/DailyShedule/Delete
+       StatusCode: 400
+
+   Log 5
+       Time: 18.09.2022 16:18:07
+       Request: https://localhost:7174/DailyShedule/Delete?apiKey=23.2?apiKey=23.2
+       StatusCode: 401
+
+   Log 6
+       Time: 18.09.2022 16:18:11
+       Request: https://localhost:7174/DailyShedule/Delete?dayOfWeek=237&apiKey=23.2?dayOfWeek=237&apiKey=23.2
+       StatusCode: 401
+
+   Log 7
+       Time: 18.09.2022 16:18:25
+       Request: https://localhost:7174/DailyShedule/GetByDay?dayOfWeek=1?dayOfWeek=1
+       StatusCode: 200
+
+   Log 8
+       Time: 18.09.2022 16:18:29
+       Request: https://localhost:7174/DailyShedule/GetByDay?dayOfWeek=11?dayOfWeek=11
+       StatusCode: 204
+
+Start of the session: 18.09.2022 16:19:39
+   Log 1
+       Time: 18.09.2022 16:19:39
+       Request: https://localhost:7174/DailyShedule/GetTodayShedule
+       StatusCode: 200
+
+   Log 2
+       Time: 18.09.2022 16:19:49
+       Request: https://localhost:7174/DailyShedule/Insert?apiKey=123?apiKey=123
+       StatusCode: 401
+
+   Log 3
+       Time: 18.09.2022 16:19:58
+       Request: https://localhost:7174/DailyShedule/Insert?apiKey=123?apiKey=123
+       StatusCode: 400
+
+   Log 4
+       Time: 18.09.2022 16:20:05
+       Request: https://localhost:7174/DailyShedule/GetAll
+       StatusCode: 200
+
+   Log 5
+       Time: 18.09.2022 16:20:14
+       Request: https://localhost:7174/DailyShedule/GetByDay?dayOfWeek=4?dayOfWeek=4
+       StatusCode: 200
+
+   Log 6
+       Time: 18.09.2022 16:20:17
+       Request: https://localhost:7174/DailyShedule/GetByDay?dayOfWeek=5?dayOfWeek=5
+       StatusCode: 200
+

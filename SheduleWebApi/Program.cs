@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Http.Extensions;
 using SheduleWebApi;
 using Microsoft.EntityFrameworkCore;
 using SheduleWebApi.Controllers;
+using SheduleWebApi.Logger;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connection);
 });
 
+// create fileLogger
+ILoggerFactory fileLoggerFactory = LoggerFactory
+    .Create(builder => builder.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "logger.txt")));
+ILogger fileLogger = fileLoggerFactory.CreateLogger<Program>();
+
 
 var app = builder.Build();
 
@@ -26,14 +33,31 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-// при любом запросе будет лог в консоль
+// Logging
+int counter = 0;
+
 app.Use(async (context, next) =>
 {
     await next.Invoke();
 
-    app.Logger.LogInformation($"request: {context.Request.Path + context.Request.QueryString}\n" +
-                    $"      status: {context.Response.StatusCode}\n" +
-                    $"      time: {DateTime.Now}\n");
+    string currentTime = DateTime.Now.ToString();
+    string request = context.Request.GetDisplayUrl() + context.Request.QueryString;
+    string statusCode = context.Response.StatusCode.ToString();
+
+    string logBody = "";
+
+    counter++;
+    if (counter == 1)
+    {
+        logBody += $"Start of the session: {currentTime}\n";
+    }
+
+    logBody += $"   Log {counter}\n" +
+               $"       Time: {currentTime}\n" +
+               $"       Request: {request}\n" +
+               $"       StatusCode: {statusCode}\n";
+    
+    fileLogger.LogInformation(logBody);
 });
 
 app.Run();
