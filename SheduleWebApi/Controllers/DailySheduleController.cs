@@ -9,8 +9,8 @@ namespace SheduleWebApi.Controllers
     [Route("[controller]")]
     public class DailySheduleController : Controller
     {
-        AppDbContext db;
-        IConfiguration configuration;
+        private AppDbContext db;
+        private IConfiguration configuration;
 
         public DailySheduleController(AppDbContext db, IConfiguration configuration)
         {
