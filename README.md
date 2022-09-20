@@ -1,5 +1,5 @@
 # Schedule WebApi
-> An ASP.NET Core Web API project to manage your schedule for school/university.
+> Web API project for school/university timetable management
 
 ## Methods
 
@@ -14,7 +14,7 @@
 
 Request URL: 
 ```
-https://localhost:{Your port}/DailyShedule/GetTodayShedule
+https://localhost:{Your port}/DailySсhedule/GetTodaySсhedule
 ```
 
 Response body:
