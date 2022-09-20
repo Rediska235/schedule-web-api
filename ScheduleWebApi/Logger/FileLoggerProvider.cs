@@ -1,4 +1,4 @@
-﻿namespace SheduleWebApi.Logger
+﻿namespace ScheduleWebApi.Logger
 {
     public class FileLoggerProvider : ILoggerProvider
     {

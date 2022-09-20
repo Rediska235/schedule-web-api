@@ -1,39 +1,39 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SheduleWebApi.Model;
 using System.Net;
+using ScheduleWebApi.Model;
 
-namespace SheduleWebApi.Controllers
+namespace ScheduleWebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class DailySheduleController : Controller
+    public class DailyScheduleController : Controller
     {
         private AppDbContext db;
         private IConfiguration configuration;
 
-        public DailySheduleController(AppDbContext db, IConfiguration configuration)
+        public DailyScheduleController(AppDbContext db, IConfiguration configuration)
         {
             this.db = db;
             this.configuration = configuration;
         }
 
-        [HttpGet("GetTodayShedule")]
-        public DailyShedule GetTodayShedule()
+        [HttpGet("GetTodaySchedule")]
+        public DailySchedule GetTodaySchedule()
         {
             DayOfWeek dayOfWeek = DateTime.Today.DayOfWeek;
-            return db.shedule.Where(s => s.DayOfWeek == (int)dayOfWeek).FirstOrDefault();
+            return db.Schedule.Where(s => s.DayOfWeek == (int)dayOfWeek).FirstOrDefault();
         }
 
         [HttpGet("GetAll")]
-        public IEnumerable<DailyShedule> GetAll() => db.shedule.ToList();
+        public IEnumerable<DailySchedule> GetAll() => db.Schedule.ToList();
 
         [HttpGet("GetByDay")]
-        public DailyShedule GetByDay(int dayOfWeek) => 
-            db.shedule.Where(s => s.DayOfWeek == dayOfWeek).FirstOrDefault();
+        public DailySchedule GetByDay(int dayOfWeek) => 
+            db.Schedule.Where(s => s.DayOfWeek == dayOfWeek).FirstOrDefault();
 
         [HttpPost("Insert")]
-        public void Insert(DailyShedule shedule, string apiKey)
+        public void Insert(DailySchedule schedule, string apiKey)
         {
             string validKey = configuration["ApiKey"];
             if (apiKey != validKey)
@@ -42,12 +42,12 @@ namespace SheduleWebApi.Controllers
                 return;
             }
 
-            db.shedule.Add(shedule);
+            db.Schedule.Add(schedule);
             db.SaveChanges();
         }
 
         [HttpPost("Update")]
-        public void Update(DailyShedule shedule, string apiKey)
+        public void Update(DailySchedule schedule, string apiKey)
         {
             string validKey = configuration["ApiKey"];
             if (apiKey != validKey)
@@ -56,7 +56,7 @@ namespace SheduleWebApi.Controllers
                 return;
             }
 
-            db.shedule.Update(shedule);
+            db.Schedule.Update(schedule);
             db.SaveChanges();
         }
 
@@ -70,10 +70,10 @@ namespace SheduleWebApi.Controllers
                 return;
             }
 
-            DailyShedule sheduleToDelete = db.shedule
+            DailySchedule scheduleToDelete = db.Schedule
                 .Where(s => s.DayOfWeek == dayOfWeek)
                 .FirstOrDefault();
-            db.shedule.Remove(sheduleToDelete);
+            db.Schedule.Remove(scheduleToDelete);
             db.SaveChanges();
         }
     }

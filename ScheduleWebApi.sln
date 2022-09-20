@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SheduleWebApi", "SheduleWebApi\SheduleWebApi.csproj", "{F2FA49A3-4E70-474D-A926-9B73ED24EF06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduleWebApi", "ScheduleWebApi\ScheduleWebApi.csproj", "{F2FA49A3-4E70-474D-A926-9B73ED24EF06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

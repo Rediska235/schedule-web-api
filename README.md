@@ -1,9 +1,9 @@
-# Shedule WebApi
-> An ASP.NET Core Web API project to manage your shedule for school/university.
+# Schedule WebApi
+> An ASP.NET Core Web API project to manage your schedule for school/university.
 
 ## Methods
 
-- GetTodayShedule &emsp; (GET)
+- GetTodaySchedule &emsp; (GET)
 - GetAll &emsp; &emsp; &emsp; &emsp; &emsp; (GET)
 - GetByDay &emsp; &emsp; &emsp; &emsp;(GET)
 - Insert &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp;(POST)
@@ -30,7 +30,7 @@ Response body:
 
 ## ApiKey
 
->Everyone could see your shedule but only people with `ApiKey` can update it.
+>Everyone could see your schedule but only people with `ApiKey` can update it.
 
 To create your ApiKey you need to follow this steps:
 

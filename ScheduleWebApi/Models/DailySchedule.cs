@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
-namespace SheduleWebApi.Model
+namespace ScheduleWebApi.Model
 {
-    public class DailyShedule
+    public class DailySchedule
     {
         [Key]
         public int DayOfWeek { get; set; }

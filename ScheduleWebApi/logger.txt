@@ -70,3 +70,20 @@ Start of the session: 18.09.2022 16:19:39
        Request: https://localhost:7174/DailyShedule/GetByDay?dayOfWeek=5?dayOfWeek=5
        StatusCode: 200
 
+Start of the session: 20.09.2022 17:35:45
+   Log 1
+       Time: 20.09.2022 17:35:45
+       Request: https://localhost:7174/DailyShedule/GetTodayShedule
+       StatusCode: 200
+
+Start of the session: 20.09.2022 17:51:13
+   Log 1
+       Time: 20.09.2022 17:51:13
+       Request: https://localhost:7174/DailySchedule/GetTodaySchedule
+       StatusCode: 200
+
+   Log 2
+       Time: 20.09.2022 17:51:20
+       Request: https://localhost:7174/DailySchedule/GetAll
+       StatusCode: 200
+

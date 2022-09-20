@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SheduleWebApi.Model;
+using ScheduleWebApi.Model;
 
-namespace SheduleWebApi.Controllers
+namespace ScheduleWebApi.Controllers
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<DailyShedule> shedule { get; set; }
+        public DbSet<DailySchedule> Schedule { get; set; }
 
         public AppDbContext(DbContextOptions options) : base(options)
         {

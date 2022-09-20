@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Http.Extensions;
-using SheduleWebApi;
+using ScheduleWebApi;
 using Microsoft.EntityFrameworkCore;
-using SheduleWebApi.Controllers;
-using SheduleWebApi.Logger;
+using ScheduleWebApi.Controllers;
+using ScheduleWebApi.Logger;
 
 var builder = WebApplication.CreateBuilder(args);
 

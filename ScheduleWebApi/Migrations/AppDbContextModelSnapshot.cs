@@ -2,19 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SheduleWebApi.Controllers;
+using ScheduleWebApi.Controllers;
 
 #nullable disable
 
-namespace SheduleWebApi.Migrations
+namespace ScheduleWebApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220915104856_AddedKey")]
-    partial class AddedKey
+    partial class AppDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,7 +21,7 @@ namespace SheduleWebApi.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("SheduleWebApi.Model.DailyShedule", b =>
+            modelBuilder.Entity("ScheduleWebApi.Model.DailySchedule", b =>
                 {
                     b.Property<int>("DayOfWeek")
                         .ValueGeneratedOnAdd()
@@ -49,7 +47,7 @@ namespace SheduleWebApi.Migrations
 
                     b.HasKey("DayOfWeek");
 
-                    b.ToTable("shedule");
+                    b.ToTable("Schedule");
                 });
 #pragma warning restore 612, 618
         }
