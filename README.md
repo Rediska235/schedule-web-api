@@ -1,20 +1,20 @@
-# Schedule WebApi
+# Schedule Web API
 > Web API project for school/university timetable management
 
 ## Methods
 
-- GetTodaySchedule &emsp; (GET)
-- GetAll &emsp; &emsp; &emsp; &emsp; &emsp; (GET)
-- GetByDay &emsp; &emsp; &emsp; &emsp;(GET)
-- Insert &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp;(POST)
-- Update &emsp; &emsp; &emsp; &emsp; &ensp; (POST)
-- Delete &emsp; &emsp; &emsp; &emsp; &emsp;(DELETE)
+- get today schedule
+- get all
+- get by day
+- insert
+- update
+- delete
 
 ## Examples
 
 Request URL: 
 ```
-https://localhost:{Your port}/DailySсhedule/GetTodaySсhedule
+https://localhost:7215/DailySсhedule/GetTodaySсhedule
 ```
 
 Response body:
